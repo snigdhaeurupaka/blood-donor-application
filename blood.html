@@ -1,0 +1,107 @@
+<html>
+<head>
+<title><i>BLOOD BANK APPLICATION</i>
+</title>
+</head>
+<body>
+<script language="javascript">
+function validation()
+{
+var valid1=false;
+var valid2=false;
+var mail = document.myform2.mail.value;
+var ph = document.myform1.ph.value;
+ph_re = new RegExp("^[\\d]$","g");
+mail_re = new RegExp("^[a-z]+[.]?[A-Za-z0-9]+@[a-z]+.com$","g");
+
+if( ph.length==10 )
+{
+valid1=true;
+}
+else
+{
+alert("check  phone number!");
+}
+
+if( mail.match(mail_re))
+{
+valid2=true;
+}
+else
+{
+alert("check email id !");
+}
+return (valid1 && valid2);
+}
+</script>
+<table border="1" align="center" width=600>
+<tr><td>
+<h1 align="center"><u>BLOOD BANK APPLICATION</u> </h1>
+<table align="center">
+
+<tr>
+<td><b>Donor Name</b></td>
+<td><form>
+<input type="text"></td>
+</form>
+</tr>
+
+
+<tr>
+<td><b>Age</b></td>
+<td><form>
+<input type="number"></td>
+</form>
+</tr>
+
+
+<tr>
+<td><b>Address</b></td>
+<td><form>
+<input type="text"></td>
+</form>
+</tr>
+
+
+<tr>
+<td><b>Email ID</b></td>
+<td><form name="myform2" onsubmit="return validation()" method="post">
+<input type="text" name="mail"></td>
+</form>
+</tr>
+
+<tr>
+<td><b>Mobile No</b></td>
+<td><form name="myform1" onsubmit="return validation()" method="post">
+<input type="text" name="ph"></td>
+</form>
+</tr>
+
+<tr>
+<td><b>Blood Group</b></td>
+<td><form>
+<input type="text"></td>
+</form>
+</tr>
+
+<tr>
+<td><b>Gender</b></td>
+<td><form>
+<input type="radio" name="group" >Male
+<input type="radio" name="group">Female
+</form></td>
+</tr>
+
+
+<tr>
+<td colspan="2" align="center"><form>
+<input type="button" value="save">
+<input type="reset">
+</form>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
